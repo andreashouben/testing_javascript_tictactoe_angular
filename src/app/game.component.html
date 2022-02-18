@@ -1,0 +1,5 @@
+<h1 data-testid="win-message" *ngIf="winner">
+  {{names[winner]}} wins the game with {{winner}}
+</h1>
+<board [board]="board" (clicked)="clickAtCell($event)" *ngIf="!winner"></board>
+<message-box [messages]="messages" ></message-box> 

@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { GameComponent } from './game.component';
+import { MessageBoxComponent } from './components/message-box/message-box.component';
+import { BoardComponent } from './components/board/board.component';
+import { CellComponent } from './components/cell/cell.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    GameComponent,
+    MessageBoxComponent,
+    BoardComponent,
+    CellComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [GameComponent]
 })
-export class AppModule { }
+export class AppModule  { }
+ 
