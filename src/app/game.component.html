@@ -2,8 +2,11 @@
   {{names[winner]}} wins the game with {{winner}}
 </h1>
 <div *ngIf="!winner">
-  <board [board]="board" (clicked)="clickAtCell($event)"></board>
   <player label="Player X" [name]="names.X" (nameChanged)="setPlayerName('X', $event)"></player>
+  <br/>
   <player label="Player O" [name]="names.O" (nameChanged)="setPlayerName('O', $event)"></player>
+  <br/>
+  <board [board]="board" (clicked)="clickAtCell($event)"></board>
+  <br/>  
   <message-box [messages]="messages" ></message-box> 
 </div>

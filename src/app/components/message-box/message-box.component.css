@@ -1,0 +1,10 @@
+
+#message-box {
+    width: 200px;
+    border: 1px solid black;
+    width: 258px;
+    height: 200px;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+  

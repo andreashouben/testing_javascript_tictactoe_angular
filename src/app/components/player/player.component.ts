@@ -13,9 +13,10 @@ export class PlayerComponent implements OnInit {
 
   onChange = (event: Event) => {
     const target = event.target as HTMLInputElement
-    this.nameChanged.emit(target.value.toUpperCase())
+    this.nameChanged.emit(target.value)
   }
   ngOnInit(): void {
+
   }
 
 }
