@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import * as BoardModel from '../../domain/Board'
+import { Board, Position } from '../../domain/Board';
 
 
 @Component({

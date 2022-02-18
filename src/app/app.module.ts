@@ -5,13 +5,15 @@ import { GameComponent } from './game.component';
 import { MessageBoxComponent } from './components/message-box/message-box.component';
 import { BoardComponent } from './components/board/board.component';
 import { CellComponent } from './components/cell/cell.component';
+import { PlayerComponent } from './components/player/player.component';
 
 @NgModule({
   declarations: [
     GameComponent,
     MessageBoxComponent,
     BoardComponent,
-    CellComponent
+    CellComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule

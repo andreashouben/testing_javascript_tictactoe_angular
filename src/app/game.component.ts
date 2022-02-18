@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as BoardModel from './domain/Board'
+import { Board, Position } from './domain/Board';
 import { Player, Player as PlayerModel} from './domain/Player'
 
 @Component({
@@ -18,6 +19,8 @@ export class GameComponent {
     X: 'Bob',
     O: "Alice"
   }
+
+  setPlayerName = (player: Player, name: string) => this.names[player] = name
 
   clickAtCell = (position: Position) => {
     const message = this.names[this.currentPlayer] + " sets " + this.currentPlayer + ' on ' + position.print()    

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Position } from 'src/app/domain/Board';
 
 @Component({
   selector: 'cell',

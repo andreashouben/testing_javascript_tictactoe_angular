@@ -1,5 +1,9 @@
 <h1 data-testid="win-message" *ngIf="winner">
   {{names[winner]}} wins the game with {{winner}}
 </h1>
-<board [board]="board" (clicked)="clickAtCell($event)" *ngIf="!winner"></board>
-<message-box [messages]="messages" ></message-box> 
+<div *ngIf="!winner">
+  <board [board]="board" (clicked)="clickAtCell($event)"></board>
+  <player label="Player X" [name]="names.X" (nameChanged)="setPlayerName('X', $event)"></player>
+  <player label="Player O" [name]="names.O" (nameChanged)="setPlayerName('O', $event)"></player>
+  <message-box [messages]="messages" ></message-box> 
+</div>
