@@ -1,25 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { MessageBoxComponent } from './message-box.component';
-
+import {render, screen} from "@testing-library/angular"
+import { MessageBoxComponent } from "./message-box.component";
 describe('MessageBoxComponent', () => {
-  let component: MessageBoxComponent;
-  let fixture: ComponentFixture<MessageBoxComponent>;
+  
+  it('should list the passed messages', async () => {
+    const messages = ["Message 1", "Message 2"];  
+    await render(MessageBoxComponent,{
+      componentProperties: {
+        messages
+      }
+    }
+    )
+    const listitems = screen.getAllByRole('listitem');
+    expect(listitems.length).toEqual(2)
+    expect(listitems.map(item => item.textContent?.trim())).toEqual(messages)
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MessageBoxComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MessageBoxComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });
