@@ -4,7 +4,7 @@ import { Board, Position } from '../../domain/Board';
 
 
 @Component({
-  selector: 'board',
+  selector: 'ttt-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 
@@ -17,14 +17,14 @@ export class BoardComponent implements OnInit {
   positions: Position[] = []
   owner = (position: Position) => BoardModel.at(position, this.board)
 
-  
-  
-  onClick (position: Position){    
+
+
+  onClick (position: Position){
     this.clicked.emit(position)
   }
 
   ngOnInit(): void {
-    this.positions = BoardModel.positions() 
+    this.positions = BoardModel.positions()
   }
 
 }

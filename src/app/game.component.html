@@ -2,11 +2,11 @@
   {{names[winner]}} wins the game with {{winner}}
 </h1>
 <div *ngIf="!winner">
-  <player label="Player X" [name]="names.X" (nameChanged)="setPlayerName('X', $event)"></player>
+  <ttt-player label="Player X" [name]="names.X" (nameChanged)="setPlayerName('X', $event)"></ttt-player>
   <br/>
-  <player label="Player O" [name]="names.O" (nameChanged)="setPlayerName('O', $event)"></player>
+  <ttt-player label="Player O" [name]="names.O" (nameChanged)="setPlayerName('O', $event)"></ttt-player>
   <br/>
-  <board [board]="board" (clicked)="clickAtCell($event)"></board>
-  <br/>  
-  <message-box [messages]="messages" ></message-box> 
+  <ttt-board [board]="board" (clicked)="clickAtCell($event)"></ttt-board>
+  <br/>
+  <ttt-message-box [messages]="messages" ></ttt-message-box>
 </div>

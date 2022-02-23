@@ -4,7 +4,7 @@ import { Board, Position } from './domain/Board';
 import { Player, Player as PlayerModel} from './domain/Player'
 
 @Component({
-  selector: 'app-root',
+  selector: 'ttt-root',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css']
 })
@@ -23,10 +23,10 @@ export class GameComponent {
   setPlayerName = (player: Player, name: string) => this.names[player] = name
 
   clickAtCell = (position: Position) => {
-    const message = this.names[this.currentPlayer] + " sets " + this.currentPlayer + ' on ' + position.print()    
+    const message = this.names[this.currentPlayer] + " sets " + this.currentPlayer + ' on ' + position.print()
     this.messages = [...this.messages, message]
     this.board = BoardModel.mark(this.currentPlayer, position, this.board)
     this.currentPlayer = PlayerModel.opponent(this.currentPlayer)
-    this.winner =  BoardModel.winner(this.board) 
+    this.winner =  BoardModel.winner(this.board)
     }
 }

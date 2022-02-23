@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Position } from 'src/app/domain/Board';
 
 @Component({
-  selector: 'cell',
+  selector: 'ttt-cell',
   templateUrl: './cell.component.html',
   styleUrls: ['./cell.component.css']
 })
@@ -18,7 +18,7 @@ export class CellComponent implements OnInit {
   dataTestId: string = ''
 
 
-  onClick(position: Position) {    
+  onClick(position: Position) {
     this.clicked.emit(position)
   }
 

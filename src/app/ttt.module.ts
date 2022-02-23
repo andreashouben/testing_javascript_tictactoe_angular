@@ -21,5 +21,4 @@ import { PlayerComponent } from './components/player/player.component';
   providers: [],
   bootstrap: [GameComponent]
 })
-export class AppModule  { }
- 
+export class TttModule { }

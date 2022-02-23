@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'player',
+  selector: 'ttt-player',
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.css']
 })
-export class PlayerComponent implements OnInit {
-  
+export class PlayerComponent  {
+
   @Input() label!: string
   @Input() name!: string
   @Output() nameChanged =new EventEmitter<string>()
@@ -14,9 +14,6 @@ export class PlayerComponent implements OnInit {
   onChange = (event: Event) => {
     const target = event.target as HTMLInputElement
     this.nameChanged.emit(target.value)
-  }
-  ngOnInit(): void {
-
   }
 
 }
