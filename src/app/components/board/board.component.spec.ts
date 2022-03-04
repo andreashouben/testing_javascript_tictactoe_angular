@@ -1,23 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { BoardComponent } from './board.component';
+import {BoardComponent} from './board.component';
+import {render, screen} from '@testing-library/angular';
+import * as BoardModel from '../../domain/Board'
 
 describe('BoardComponent', () => {
-  let component: BoardComponent;
-  let fixture: ComponentFixture<BoardComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ BoardComponent ]
+  it('renders', async () => {
+    await render(BoardComponent, {
+      componentProperties: {
+        board: BoardModel.create()
+      }
     })
-    .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BoardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    expect(screen.getByTestId('board')).toBeVisible();
+  })
 
-  
 });

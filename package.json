@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:watch": "ng test --watch",
     "lint": "ng lint"
   },
   "private": true,
@@ -35,8 +36,10 @@
     "@angular/compiler-cli": "~13.2.0",
     "@briebug/jest-schematic": "^4.0.0",
     "@testing-library/angular": "^11.0.2",
+    "@testing-library/jest-dom": "^5.16.2",
     "@types/jest": "latest",
     "@types/node": "^12.11.1",
+    "@types/testing-library__jest-dom": "^5.14.3",
     "@typescript-eslint/eslint-plugin": "5.11.0",
     "@typescript-eslint/parser": "5.11.0",
     "eslint": "^8.2.0",

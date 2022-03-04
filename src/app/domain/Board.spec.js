@@ -2,7 +2,7 @@ import * as Board from "./Board";
 import * as Player from "./Player";
 
 describe("Board", () => {
-  it("should export its cell positions", () => {
+  xit("should export its cell positions", () => {
     expect(Board.positions()).toEqual([
       { x: 0, y: 0 },
       { x: 1, y: 0 },
@@ -16,7 +16,7 @@ describe("Board", () => {
     ]);
   });
 
-  it("should mark an Player at position with mark", () => {
+  fit("should mark an Player at position with mark", () => {
     const board = Board.create();
     const resultBoard = Board.mark(Player.X, { x: 0, y: 0 }, board);
     expect(Board.at({ x: 0, y: 0 }, resultBoard)).toEqual(Player.X);

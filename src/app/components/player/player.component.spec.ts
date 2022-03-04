@@ -1,22 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlayerComponent } from './player.component';
+import {render, screen} from '@testing-library/angular';
+import {BoardComponent} from '../board/board.component';
 
 describe('PlayerComponent', () => {
-  let component: PlayerComponent;
-  let fixture: ComponentFixture<PlayerComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ PlayerComponent ]
+  it('should render', async () =>{
+    await render(PlayerComponent,{
+      componentProperties: {
+        label: 'label',
+        name: 'name'
+      }
     })
-    .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PlayerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
+    expect(screen.getByText('label')).toBeVisible()
+  })
 });
