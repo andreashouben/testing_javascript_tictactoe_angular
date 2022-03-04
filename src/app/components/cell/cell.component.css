@@ -1,11 +1,10 @@
 .cell {
-    border: 1px solid red;
-    width: 100px;
-    height: 100px;
-    font-size: 80px;
-  }
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+  font-size: 80px;
+}
 
-  button.cell + button.cell {
-    margin: 0;
-  }
-  
+button.cell + button.cell {
+  margin: 0;
+}

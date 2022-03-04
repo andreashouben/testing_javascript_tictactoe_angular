@@ -1,8 +1,9 @@
 <div class="board" data-testid="board">
-    <ttt-cell *ngFor="let position of positions"
-        (clicked)="onClick($event)"
-        [position]="position"
-        [owner]="owner(position)"
-        >
-    </ttt-cell>
+  <ttt-cell
+    *ngFor="let position of positions"
+    (clicked)="onClick($event)"
+    [position]="position"
+    [owner]="owner(position)"
+  >
+  </ttt-cell>
 </div>

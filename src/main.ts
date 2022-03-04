@@ -8,5 +8,6 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(TttModule)
-  .catch(err => console.error(err));
+platformBrowserDynamic()
+  .bootstrapModule(TttModule)
+  .catch((err) => console.error(err));

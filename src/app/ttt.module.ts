@@ -13,12 +13,10 @@ import { PlayerComponent } from './components/player/player.component';
     MessageBoxComponent,
     BoardComponent,
     CellComponent,
-    PlayerComponent
+    PlayerComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [GameComponent]
+  bootstrap: [GameComponent],
 })
-export class TttModule { }
+export class TttModule {}

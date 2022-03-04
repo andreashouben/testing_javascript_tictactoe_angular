@@ -1,12 +1,20 @@
 <h1 data-testid="win-message" *ngIf="winner">
-  {{names[winner]}} wins the game with {{winner}}
+  {{ names[winner] }} wins the game with {{ winner }}
 </h1>
 <div *ngIf="!winner">
-  <ttt-player label="Player X" [name]="names.X" (nameChanged)="setPlayerName('X', $event)"></ttt-player>
-  <br/>
-  <ttt-player label="Player O" [name]="names.O" (nameChanged)="setPlayerName('O', $event)"></ttt-player>
-  <br/>
+  <ttt-player
+    label="Player X"
+    [name]="names.X"
+    (nameChanged)="setPlayerName('X', $event)"
+  ></ttt-player>
+  <br />
+  <ttt-player
+    label="Player O"
+    [name]="names.O"
+    (nameChanged)="setPlayerName('O', $event)"
+  ></ttt-player>
+  <br />
   <ttt-board [board]="board" (clicked)="clickAtCell($event)"></ttt-board>
-  <br/>
-  <ttt-message-box [messages]="messages" ></ttt-message-box>
+  <br />
+  <ttt-message-box [messages]="messages"></ttt-message-box>
 </div>
