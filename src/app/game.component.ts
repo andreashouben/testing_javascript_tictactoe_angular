@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import * as BoardModel from './domain/Board'
-import { Board, Position } from './domain/Board';
-import { Player, Player as PlayerModel} from './domain/Player'
+import {Board, opponent, Player as PlayerModel, Player, Position, posToString} from './domain/Board';
 
 @Component({
   selector: 'ttt-root',
@@ -12,7 +11,7 @@ export class GameComponent {
   title = 'JS Testing 2022';
   messages: string[] = []
   board: Board = BoardModel.create()
-  currentPlayer: Player = PlayerModel.X
+  currentPlayer: Player = 'X'
   winner? : Player
 
   names =  {
@@ -23,10 +22,10 @@ export class GameComponent {
   setPlayerName = (player: Player, name: string) => this.names[player] = name
 
   clickAtCell = (position: Position) => {
-    const message = this.names[this.currentPlayer] + " sets " + this.currentPlayer + ' on ' + position.print()
+    const message = this.names[this.currentPlayer] + " sets " + this.currentPlayer + ' on ' + posToString(position)
     this.messages = [...this.messages, message]
     this.board = BoardModel.mark(this.currentPlayer, position, this.board)
-    this.currentPlayer = PlayerModel.opponent(this.currentPlayer)
+    this.currentPlayer = opponent(this.currentPlayer)
     this.winner =  BoardModel.winner(this.board)
     }
 }

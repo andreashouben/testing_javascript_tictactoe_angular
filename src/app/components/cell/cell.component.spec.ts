@@ -7,7 +7,7 @@ import {Position} from '../../domain/Board';
 describe('CellComponent', () => {
 
   it('renders', async () =>{
-    const position: Position = {x:0,y:0, print: () =>  `0|0`}
+    const position: Position = {x:0,y:0}
 
     await render(CellComponent,{
       componentProperties:{

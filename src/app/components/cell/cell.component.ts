@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Position } from 'src/app/domain/Board';
+import {Position, posToString} from 'src/app/domain/Board';
 
 @Component({
   selector: 'ttt-cell',
@@ -23,9 +23,9 @@ export class CellComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.className = `cell cell_${this.position.print()}`
-    this.dataPosition = this.position.print()
-    this.dataTestId = `cell_${this.position.print()}`
+    this.className = `cell cell_${posToString(this.position)}`
+    this.dataPosition = posToString(this.position)
+    this.dataTestId = `cell_${posToString(this.position)}`
   }
 
 }

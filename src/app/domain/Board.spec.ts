@@ -1,8 +1,16 @@
 import * as Board from "./Board";
-import * as Player from "./Player";
+import {opponent, Player} from './Board';
+
+describe('opponent', () =>{
+  it("returns the opposite Player", () => {
+    expect(opponent("X")).toEqual("O");
+    expect(opponent('O')).toEqual('X');
+  });
+})
+
 
 describe("Board", () => {
-  xit("should export its cell positions", () => {
+  it("should export its cell positions", () => {
     expect(Board.positions()).toEqual([
       { x: 0, y: 0 },
       { x: 1, y: 0 },
@@ -16,10 +24,10 @@ describe("Board", () => {
     ]);
   });
 
-  fit("should mark an Player at position with mark", () => {
+  it("should mark an Player at position with mark", () => {
     const board = Board.create();
-    const resultBoard = Board.mark(Player.X, { x: 0, y: 0 }, board);
-    expect(Board.at({ x: 0, y: 0 }, resultBoard)).toEqual(Player.X);
+    const resultBoard = Board.mark('X', { x: 0, y: 0 }, board);
+    expect(Board.at({ x: 0, y: 0 }, resultBoard)).toEqual('X');
   });
 
   it("should start with player undefined at every postion", () => {
@@ -41,9 +49,9 @@ describe("Board.winner", () => {
       { x: 0, y: 0 },
       { x: 1, y: 0 },
       { x: 2, y: 0 },
-    ].reduce((board, pos) => Board.mark(Player.O, pos, board), board);
+    ].reduce((board, pos) => Board.mark('O', pos, board), board);
 
-    expect(Board.winner(resultBoard)).toEqual(Player.O);
+    expect(Board.winner(resultBoard)).toEqual('O');
   });
 
   it("should return the winning player for cols", () => {
@@ -52,9 +60,9 @@ describe("Board.winner", () => {
       { x: 0, y: 0 },
       { x: 0, y: 1 },
       { x: 0, y: 2 },
-    ].reduce((board, pos) => Board.mark(Player.X, pos, board), board);
+    ].reduce((board, pos) => Board.mark('X', pos, board), board);
 
-    expect(Board.winner(resultBoard)).toEqual(Player.X);
+    expect(Board.winner(resultBoard)).toEqual('X');
   });
   it("should return the winning player for diagonal1", () => {
     const board = Board.create();
@@ -62,9 +70,9 @@ describe("Board.winner", () => {
       { x: 0, y: 0 },
       { x: 1, y: 1 },
       { x: 2, y: 2 },
-    ].reduce((board, pos) => Board.mark(Player.X, pos, board), board);
+    ].reduce((board, pos) => Board.mark('X', pos, board), board);
 
-    expect(Board.winner(resultBoard)).toEqual(Player.X);
+    expect(Board.winner(resultBoard)).toEqual('X');
   });
 
   it("should return the winning player for diagonal2", () => {
@@ -73,9 +81,9 @@ describe("Board.winner", () => {
       { x: 2, y: 0 },
       { x: 1, y: 1 },
       { x: 0, y: 2 },
-    ].reduce((board, pos) => Board.mark(Player.O, pos, board), board);
+    ].reduce((board, pos) => Board.mark('O', pos, board), board);
 
-    expect(Board.winner(resultBoard)).toEqual(Player.O);
+    expect(Board.winner(resultBoard)).toEqual('O');
   });
 
   test("there is no winner for a mixed row", () => {
@@ -83,9 +91,9 @@ describe("Board.winner", () => {
     const board2 = [
       { x: 0, y: 0 },
       { x: 1, y: 0 },
-    ].reduce((board, pos) => Board.mark(Player.X, pos, board), board);
+    ].reduce((board, pos) => Board.mark('X', pos, board), board);
 
-    const board3 = Board.mark(Player.O, { x: 2, y: 0 }, board2);
+    const board3 = Board.mark('O', { x: 2, y: 0 }, board2);
 
     expect(Board.winner(board3)).toEqual(undefined);
   });
