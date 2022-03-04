@@ -15,6 +15,6 @@ describe('CellComponent', () => {
       },
     });
 
-    expect(screen.getByTestId('cell_0|0')).toBeVisible();
+    expect(screen.getByTestId('cell_0/0')).toBeVisible();
   });
 });
