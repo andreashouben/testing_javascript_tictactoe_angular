@@ -10,6 +10,8 @@ const rowsOrCols = cols;
 export const opponent = (player: Player) => (player === 'O' ? 'X' : 'O');
 export const posToString = (pos: Position) => `${pos.x}/${pos.y}`;
 type PossibleWinner = Player | undefined;
+
+type WinByRowCorColXY = (rowOrCol: number, board: Board) => PossibleWinner;
 const winnerOfTwoCells = (symbol1: PossibleWinner, symbol2: PossibleWinner) =>
   symbol1 === symbol2 ? symbol1 : undefined;
 
@@ -28,8 +30,6 @@ const winByDiag1 = (board: Board) =>
 
 const winByDiag2 = (board: Board) =>
   rows.map((xy) => at({ x: 2 - xy, y: xy }, board)).reduce(winnerOfTwoCells);
-
-type WinByRowCorColXY = (rowOrCol: number, board: Board) => PossibleWinner;
 
 const winByRowY: WinByRowCorColXY = (y: number, board: Board) =>
   cols.map((x) => at({ x, y }, board)).reduce(winnerOfTwoCells);

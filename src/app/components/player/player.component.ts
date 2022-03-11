@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'ttt-player',
@@ -12,6 +12,7 @@ export class PlayerComponent {
 
   onChange = (event: Event) => {
     const target = event.target as HTMLInputElement;
+    this.name = target.value.toUpperCase();
     this.nameChanged.emit(target.value);
   };
 }

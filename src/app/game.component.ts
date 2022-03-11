@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import * as BoardModel from './domain/Board';
-import {
-  Board,
-  opponent,
-  Player as PlayerModel,
-  Player,
-  Position,
-  posToString,
-} from './domain/Board';
+import { Board, opponent, Player, Position, posToString } from './domain/Board';
 
 @Component({
   selector: 'ttt-root',

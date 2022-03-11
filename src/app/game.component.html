@@ -1,7 +1,7 @@
 <h1 data-testid="win-message" *ngIf="winner">
   {{ names[winner] }} wins the game with {{ winner }}
 </h1>
-<div *ngIf="!winner">
+<div>
   <ttt-player
     label="Player X"
     [name]="names.X"

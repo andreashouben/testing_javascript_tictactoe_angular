@@ -1,4 +1,7 @@
 <div>
-  <b>{{ label }}</b
-  >: <input [value]="name.toUpperCase()" (change)="onChange($event)" />
+  <label
+    ><b>{{ label }}</b
+    >:
+    <input [value]="name.toUpperCase()" (input)="onChange($event)" />
+  </label>
 </div>

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Position, posToString } from '../../domain/Board';
+import { Player, Position, posToString } from '../../domain/Board';
 
 @Component({
   selector: 'ttt-cell',
@@ -7,7 +7,7 @@ import { Position, posToString } from '../../domain/Board';
   styleUrls: ['./cell.component.css'],
 })
 export class CellComponent implements OnInit {
-  @Input() owner = '';
+  @Input() owner: Player | undefined = undefined;
   @Input()
   position!: Position;
   @Output() clicked = new EventEmitter<Position>();
@@ -17,7 +17,7 @@ export class CellComponent implements OnInit {
   dataTestId: string = '';
 
   onClick(position: Position) {
-    this.clicked.emit(position);
+    !this.owner && this.clicked.emit(position);
   }
 
   ngOnInit(): void {
